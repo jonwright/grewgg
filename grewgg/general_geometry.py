@@ -3,7 +3,7 @@ from __future__ import print_function, division
 import sys
 import yaml
 import numpy as np
-import positioners
+from . import positioners
 
 def fable_detector( pars , noisy=False ):
     """
