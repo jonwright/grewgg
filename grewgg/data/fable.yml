@@ -1,0 +1,159 @@
+
+
+
+Detectors :
+  frelon4m :
+    distortion : {dx : F4M_EO_dx.edf, dy : F4M_EO_dy.edf }
+    fast_axis : [ 0.0, 0.05, 0.0 ]
+    slow_axis : [ 0.0, 0.0, 0.05 ]
+  frelon21 :
+    distortion : {spline : frelon21.spline}
+    flood : frelon21_oct16.edf
+    fast_axis : [ 0.0, 0.0472, 0.0 ]
+    slow_axis : [ 0.0, 0.0,    0.0472 ]
+  f2kwb : 
+    distortion : null
+    fast_size : 0.0015               # mm
+    fast_axis : [ 0.0, 1.0, 0.0 ]
+    fast_dimension : 2048 
+    slow_size : 0.0015               # mm
+    slow_axis : [ 0.0, 0.0, 1.0 ]
+    slow_dimension : 2048
+    origin : [ 12.5, 0.0, 0.0]
+    
+Positioners:
+  FF_Detector_Mount :
+    - {type : translation, name : ffdtx1, axis : [1.0, 0.0, 0.0], pos : 20.0}
+    - {name : ffdtz1,  type: translation, axis : [0.0, 0.0, 1.0]}
+    - {name : ffdtilt, type: rotation, axis : [0.0, 1.0, 0.0]}
+  D1_Detector_Mount :
+    - {type : translation, name : nfdtx, axis : [1.0, 0.0, 0.0], pos : 20.0}
+    - {name : d1ty,  type: translation, axis : [0.0, 1.0, 0.0]}
+    - {name : d1tz, type: translation, axis : [0.0, 0.0, 1.0]}
+  3DXRD_Huber_Tower :
+    - {name : diffty, type: translation, axis : [0.0, 1.0, 0.0] }
+    - {name : difftz, type: translation, axis : [0.0, 0.0, 1.0] }
+    - {name : diffry, type: rotation, axis : [0.0, 1.0, 0.0] }
+    - {name : diffrz, type: rotation, axis : [0.0, 0.0, 1.0] }
+    - {name : samry,  type: rotation, axis : [0.0, 1.0, 0.0] }
+    - {name : samrx,  type: rotation, axis : [1.0, 0.0, 0.0] }
+    - {name : samtx,  type: translation, axis : [1.0, 0.0, 0.0] }
+    - {name : samty,  type: translation, axis : [0.0, 1.0, 0.0] }
+    - {name : samtz,  type: translation, axis : [0.0, 0.0, 1.0]  }
+  nscope_rot :
+    - {name : dty, type: translation, axis : [0.0, 0.001, 0.0] } # microns ! 
+    - {name : rot, type: rotation, axis : [0.0, 0.0, 1.0] }
+    - {name : px,  type: translation, axis : [0.001, 0.0, 0.0] }
+    - {name : py,  type: translation, axis : [0.0, 0.001, 0.0] }
+    - {name : pz,  type: translation, axis : [0.0, 0.0, 0.001]  }
+    - {name : tx,  type: translation, axis : [1.0, 0.0, 0.0] }
+    - {name : ty,  type: translation, axis : [0.0, 1.0, 0.0] }
+    - {name : tz,  type: translation, axis : [0.0, 0.0, 1.0]  }
+    - {name : rx,  type: rotation, axis : [1.0, 0.0, 0.0] }
+    - {name : ry,  type: rotation, axis : [0.0, 1.0, 0.0] }
+    - {name : rz,  type: rotation, axis : [0.0, 0.0, 1.0]  }
+  nscope_det :
+    - {name : dety, type: translation, axis : [0.0, 1.0, 0.0] } 
+    - {name : detz, type: translation, axis : [0.0, 0.0, 1.0] }
+    - {name : frelx, type: translation, axis : [1.0, 0.0, 0.0] }
+  EH1_Huber_Tower :
+    - {name : diffx, type: translation, axis : [1.0, 0.0, 0.0] }
+    - {name : diffy, type: translation, axis : [0.0, 1.0, 0.0] }
+    - {name : hz2, type: translation, axis : [0.0, 0.0, 1.0] }
+    - {name : hrz, type: rotation, axis : [0.0, 0.0, 1.0] }
+    - {name : hx,  type: translation, axis : [1.0, 0.0, 0.0] }
+    - {name : hy,  type: translation, axis : [0.0, 1.0, 0.0] }
+    - {name : hz,  type: translation, axis : [0.0, 0.0, 1.0]  }
+    - {name : hphi, type: rotation, axis : [0.0, 1.0, 1.0] }
+  EH1_Detector_Tower :
+    - {name : detx, type: translation, axis : [1.0, 0.0, 0.0] }
+    - {name : dety, type: translation, axis : [0.0, 1.0, 0.0] }    
+    - {name : fz, type: translation, axis : [0.0,  0.0, 1.0 ] }
+    - {name : fpit, type: rotation, axis : [0.0,  1.0, 0.0] }
+    - {name : fx, type: translation, axis : [1.0,  0.0, 0.0 ] }
+  Fable_diffractometer :
+    - { name : wedge, type : rotation, axis : [0.0, 1.0, 0.0] }
+    - { name : omega, type : rotation, axis : [0.0, 0.0, 1.0] }
+    - { name : t_x, type : translation, axis : [1.0, 0.0, 0.0] }
+    - { name : t_y, type : translation, axis : [0.0, 1.0, 0.0] }
+    - { name : t_z, type : translation, axis : [0.0, 0.0, 1.0] }
+  Fable_detector :
+    - { name : distance, type : translation, axis : [1.0, 0.0, 0.0] }
+    - { name : tilt_x, type : rotation, axis : [1.0, 0.0, 0.0] }
+    - { name : tilt_y, type : rotation, axis : [0.0, 1.0, 0.0] }
+    - { name : tilt_z, type : rotation, axis : [0.0, 0.0, 1.0] }
+    - { name : Oij, type : positioner,
+        mat4 :  [[1,   0,   0, 0],
+                 [0, o22, o21, 0],
+                 [0, o12, o11, 0],
+                 [0,   0,   0, 1]] }
+    - { name : z_size, type : scale, axis : [0, 0, 1] }
+    - { name : y_size, type : scale, axis : [0, 1, 0] }
+    - { name : z_center, type : translation, axis : [0.0, 0.0,-1.0] }
+    - { name : y_center, type : translation, axis : [0.0,-1.0, 0.0] }
+
+    
+
+
+
+
+Experiment:
+  Beam :
+    # energy : 0.124                  # Units match unit cell (!)
+    wavelength : 0.124
+    direction : [ 1.0, 0.0, 0.0 ] 
+    bandpass : 2.0e-3
+    divergence : 1.0e-6             # Units?
+  Diffractometer :
+    3DXRD_Huber_Tower
+  Detectors :
+    - { positioner : FF_Detector_Mount, camera : frelon21,
+    }
+  Scans :
+    scan_1 :
+      - Motor : diffrz
+        Step : 0.1
+        Start : 0.0
+        End : 180.0
+      - measurement :
+        - frelon21:
+           ImageFolder : /data/blah
+           images :
+             - data0000.edf
+             - data0001.edf
+    scan_2 :
+      - Motor  : diffrz
+        Step  : 0.1
+        Start : 0.0
+      - measurement :
+        - monitor :
+            name : pico6
+            value : 1e7  # to normalise to         
+        - frelon21 : 
+            dark : dark1s.edf
+            darkoffset : 12
+            binning : [1, 1]
+            flips : [No, No]
+            images :
+              namefmt : "{stem:s}{pass:d}_{number:04d}.edf.gz"
+              folder : /data/id11/inhouse3/blah/toto
+              stem : toto17_
+              first : 0
+              last  : 899
+              interlaced : Yes
+              iflip : No
+
+  processing :
+    scan_2:
+      frelon21:
+        Background :
+          median : median_image.edf  
+        Peaks :
+          folder : /data/processing/blah
+          thresholds: [100, 200, 400 ]
+          sptfiles: mylovelypeaks_t100.spt
+          fltfiles: mylovelypeaks_t100.flt
+
+
+
+
